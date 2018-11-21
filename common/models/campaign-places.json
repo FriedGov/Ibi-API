@@ -1,0 +1,39 @@
+{
+  "name": "CampaignPlaces",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "campaignId": {
+      "type": "number",
+      "required": true
+    },
+    "placeId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "place": {
+      "type": "belongsTo",
+      "model": "Place",
+      "foreignKey": "placeId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "campaign": {
+      "type": "belongsTo",
+      "model": "Campaign",
+      "foreignKey": "campaignId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

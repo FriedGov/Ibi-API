@@ -1,0 +1,58 @@
+{
+  "name": "Account",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "gender": {
+      "type": "string",
+      "required": true
+    },
+    "age": {
+      "type": "string",
+      "required": true
+    },
+    "single": {
+      "type": "boolean",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "answers": {
+      "type": "hasMany",
+      "model": "Answer",
+      "foreignKey": "accountId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "GivenAnswer"
+    },
+    "questions": {
+      "type": "hasMany",
+      "model": "Question",
+      "foreignKey": "accountId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "GivenAnswer"
+    },
+    "places": {
+      "type": "hasMany",
+      "model": "Place",
+      "foreignKey": "accountId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "GivenAnswer"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

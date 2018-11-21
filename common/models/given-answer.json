@@ -1,0 +1,44 @@
+{
+  "name": "GivenAnswer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "questionId": {
+      "type": "number",
+      "required": true
+    },
+    "answerId": {
+      "type": "number",
+      "required": false
+    },
+    "answerText": {
+      "type": "string",
+      "required": false
+    },
+    "accountId": {
+      "type": "number",
+      "required": true
+    },
+    "placeId": {
+      "type": "number",
+      "required": true
+    },
+    "time": {
+      "type": "string",
+      "required": true
+    },
+    "rating": {
+      "type": "number",
+      "required": false,
+      "dataType": "decimal",
+      "scale": 2
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

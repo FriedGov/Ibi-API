@@ -1,0 +1,107 @@
+{
+  "name": "Question",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "categoryId": {
+      "type": "number",
+      "required": true
+    },
+    "questionType": {
+      "type": "string",
+      "required": true
+    },
+    "languageId": {
+      "type": "number",
+      "required": true
+    },
+    "placeId": {
+      "type": "number",
+      "required": false
+    },
+    "campaignId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "answers": {
+      "type": "hasMany",
+      "model": "Answer",
+      "foreignKey": "questionId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "AnswersQuestions"
+    },
+    "category": {
+      "type": "belongsTo",
+      "model": "Category",
+      "foreignKey": "id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "Language": {
+      "type": "belongsTo",
+      "model": "Language",
+      "foreignKey": "id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "language": {
+      "type": "belongsTo",
+      "model": "Language",
+      "foreignKey": "id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "campaigns": {
+      "type": "hasMany",
+      "model": "Campaign",
+      "foreignKey": "questionId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "CampaignQuestions"
+    },
+    "accounts": {
+      "type": "hasMany",
+      "model": "Account",
+      "foreignKey": "questionId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "GivenAnswer"
+    },
+    "places": {
+      "type": "hasMany",
+      "model": "Place",
+      "foreignKey": "placeId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "PlaceQuestion"
+    },
+    "campaign": {
+      "type": "belongsTo",
+      "model": "Campaign",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

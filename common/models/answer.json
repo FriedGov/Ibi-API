@@ -1,0 +1,50 @@
+{
+  "name": "Answer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "languageId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "questions": {
+      "type": "hasMany",
+      "model": "Question",
+      "foreignKey": "answerId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "AnswersQuestions"
+    },
+    "accounts": {
+      "type": "hasMany",
+      "model": "Account",
+      "foreignKey": "answerId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "GivenAnswer"
+    },
+    "places": {
+      "type": "hasMany",
+      "model": "Place",
+      "foreignKey": "answerId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "GivenAnswer"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

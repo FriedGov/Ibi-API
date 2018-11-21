@@ -1,0 +1,39 @@
+{
+  "name": "AnswersQuestions",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "answerId": {
+      "type": "number",
+      "required": true
+    },
+    "questionId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "question": {
+      "type": "belongsTo",
+      "model": "Question",
+      "foreignKey": "questionId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "answer": {
+      "type": "belongsTo",
+      "model": "Answer",
+      "foreignKey": "answerId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

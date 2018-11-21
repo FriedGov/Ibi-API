@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Question": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Language": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Category": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Answer": {
+    "dataSource": "db",
+    "public": true
+  },
+  "AnswersQuestions": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Campaign": {
+    "dataSource": "db",
+    "public": true
+  },
+  "CampaignPlaces": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Account": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Point": {
+    "dataSource": "db",
+    "public": false
+  },
+  "GivenAnswer": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Place": {
+    "dataSource": "db",
+    "public": true
+  }
+}

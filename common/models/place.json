@@ -1,0 +1,43 @@
+{
+  "name": "Place",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "string",
+      "required": true
+    },
+    "id": {
+      "type": "number"
+    },
+    "latitude": {
+      "type": "number",
+      "required": true
+    },
+    "longitude": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "campaigns": {
+      "type": "hasMany",
+      "model": "Campaign",
+      "foreignKey": "placeId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "CampaignPlaces"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

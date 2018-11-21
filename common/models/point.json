@@ -1,0 +1,30 @@
+{
+  "name": "Point",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "placeId": {
+      "type": "number",
+      "required": true
+    },
+    "longitude": {
+      "type": "number",
+      "required": true
+    },
+    "latitude": {
+      "type": "number",
+      "required": true
+    },
+    "radius": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

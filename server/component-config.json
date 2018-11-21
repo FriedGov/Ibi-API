@@ -1,0 +1,13 @@
+{
+  "loopback-component-explorer": {
+    "mountPath": "/explorer",
+    "generateOperationScopedModels": true,
+    "uiDirs": [
+      "server/explorer"
+    ],
+    "apiInfo": {
+      "title": "ibi API v1",
+      "description": ""
+    }
+  }
+}

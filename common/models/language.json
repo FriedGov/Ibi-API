@@ -1,0 +1,35 @@
+{
+  "name": "Language",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "questions": {
+      "type": "hasMany",
+      "model": "Question",
+      "foreignKey": "languageId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "languages": {
+      "type": "hasOne",
+      "model": "Language",
+      "foreignKey": "id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

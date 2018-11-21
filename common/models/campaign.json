@@ -1,0 +1,44 @@
+{
+  "name": "Campaign",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "questions": {
+      "type": "hasMany",
+      "model": "Question",
+      "foreignKey": "campaignId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "places": {
+      "type": "hasMany",
+      "model": "Place",
+      "foreignKey": "placeId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "CampaignPlaces"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,12 @@
+{
+  "db": {
+    "host": "hboict.perik.me",
+    "port": 3306,
+    "url": "",
+    "database": "ibi",
+    "password": "xB8JSGggdzA3YxVjsQ6z",
+    "name": "db",
+    "user": "root",
+    "connector": "mysql"
+  }
+}
